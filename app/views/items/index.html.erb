@@ -1,0 +1,33 @@
+<% provide(:title, 'Store') %>
+<div id="itemsContainer">
+<h1>Items</h1>
+
+
+
+    <% @items.each do |item| %>
+    <div class="itemhols">
+      
+      <%= link_to (image_tag item.image, :class=>"itemholsIm"), item %>
+      
+      
+      <h1><%= item.artist %> - <%= item.title %></h1>
+      
+        
+      
+        <%= item.reference_ID %>
+        <%= item.genre %>
+        <%= item.release_date %>
+        <%= item.label %>
+        <%= item.price %>
+        <%= link_to 'Show', item, :class =>"button", :role =>"button" %>
+        <%= link_to 'Edit', edit_item_path(item), :class =>"button", :role =>"button" %>
+        <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"button", :role =>"button" %>
+    
+    </div>  
+    
+    <% end %>
+
+
+<br>
+
+</div>
