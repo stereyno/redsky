@@ -1,11 +1,17 @@
 <footer class="foot">
     
-    <!-- Only display the option to add an item if the user is logged in -->
+    <!-- Check user is logged in -->
     
     <% if user_signed_in? %>
-
-    <%= link_to 'New Item', new_item_path, :class =>"button", :role =>"button" %>
     
+        <!-- Check if the current user is an admin user. Only display option to add new item if yes -->
+    
+        <% if current_user.admin? %>
+
+        <%= link_to 'New Item', new_item_path, :class =>"button", :role =>"button" %>
+        
+        <% end %>
+            
     <% end %>
 
 </footer>

@@ -19,10 +19,25 @@
         <%= item.release_date %>
         <%= item.label %>
         <%= item.price %>
-        <%= link_to 'Show', item, :class =>"button", :role =>"button" %>
-        <%= link_to 'Edit', edit_item_path(item), :class =>"button", :role =>"button" %>
-        <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"button", :role =>"button" %>
-    
+        
+        <% if user_signed_in? %>
+        
+        <!-- if the user is a registered user, display 'Add To Cart' -->
+        
+        <a href = "/cart/<%= item.id %>" class = "button">Add To Cart</a>
+        
+          <!-- if the logged in user is also an admin, display 'update items' options -->
+        
+          <% if current_user.admin? %>
+        
+          <%= link_to 'Show', item, :class =>"button", :role =>"button" %>
+          <%= link_to 'Edit', edit_item_path(item), :class =>"button", :role =>"button" %>
+          <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"button", :role =>"button" %>
+        
+          <% end %>
+        
+        <% end %>
+        
     </div>  
     
     <% end %>
