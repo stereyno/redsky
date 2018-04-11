@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+ 
   
   resources :items
   root 'static_pages#home'
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
   #get '/logout', to: 'user#logout'
   #get '/login', to: 'users/sessions#new'
   
+  #get 'users/:id' => 'users#show'
  
   get 'cart/index'
   get '/cart', to: 'cart#index'
