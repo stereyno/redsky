@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/store', to:'items#index'
   get '/about', to:'static_pages#about'
   get '/contact', to:'static_pages#contact'
+  get '/editprofile', to: 'static_pages#editprofile'
   
   get '/login', to: 'user#login'
   get '/logout', to: 'user#logout'
