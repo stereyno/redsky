@@ -1,0 +1,15 @@
+<h1>Main Categories</h1>
+<br>
+
+<% @categories.each do |category| %>
+
+<div class="itemhols">
+
+  <h1><%= category.title %></h1>
+  <%= image_tag category.image, :class=>"itemholsIm" %>
+  <p><%= category.description %></p>
+  <p><a href="/category/<%= category.title %>" class="button"><%= category.title %></a></p>
+  
+</div>
+
+<% end %>
