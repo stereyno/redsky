@@ -16,6 +16,10 @@ Rails.application.routes.draw do
   end
   
   get '/checkout' , to: 'cart#createOrder'
+  
+  get '/paid', to: 'static_pages#paid'
+  
+  post '/search', to: 'items#search'
  
   
   resources :items

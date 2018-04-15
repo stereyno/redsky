@@ -18,4 +18,17 @@ class StaticPagesController < ApplicationController
   def editprofile
   end
   
+  def paid
+    
+    flash[:notice] = "Transaction Complete"
+    
+    @order = Order.last
+    
+    @order.update_attribute(:status, "Paid by User: #{current_user.email}")
+    
+    session[:cart] = nil;
+    
+  end
+  
+  
 end
