@@ -1,18 +1,25 @@
 <% provide(:title, 'Home') %>
-<div class="mainCont">
+<div class="mainPanel">
   
-  <%= image_tag("redsky.jpg", alt: "Welcome Image", :class => "welcomeIm") %>
+  <div class = "mainOverlay">
+		
+		<div class = "mainOverlayText">
+			
+			RED<br> SKY<br> VINYL
+		
+		</div>
+		
+	</div>
   
-<h1>Home</h1>
-<p>Welcome to RedSky Vinyl Store</p>
-<hr>
-<%= render 'layouts/categories' %>
 
 </div>
 
+ 
 
-<div class = "mainCont">
-    <h2>Search</h2>
-    <%= render 'layouts/search' %>
+<br><br><br>
+
+<div class = "lowerPanel">
+  
+  <%= render 'layouts/categories' %>
     
 </div>

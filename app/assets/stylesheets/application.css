@@ -1,78 +1,92 @@
-.headSec {
-  min-height: 10px;
-  background-color: #b3e0ff;
-  width: 100%;
-  margin-bottom: 10px;
-  overflow: auto;
+.navBar{
+	top: 0;
+	width: 100%;
+	height : 50px;
+	background-color: #0d0d0d;
+	display: flex;
+	justify-content: center;
+	z-index: 2;
+	
 }
 
-.headSec h1 {
-  color: #ffffff;
-  font-size: 80px;
-  padding: 15px;
+.searchBar{
+	width: 100%;
+	height : 55px;
+	text-align: right;
+	background-color: #ffffff;
+	font-family: Roboto;
+	font-size: 15px;
+	font: #0d0d0d;
 }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
+
+#topMenuItems {
+	font-family: Roboto;
+	color: #fafafa;
+	display: inline-block;	
+	margin-left:50px;
+	margin-right: 50px;
+	margin-top: 14px;
+	float:left;
 }
 
-li {
-  float:left;
+
+#lowerMenuItems {
+    font-family: Roboto;
+	color: #0d0d0d;
+	display: inline-block;	
+	margin-left:10px;
+	margin-right: 10px;
+	margin-top: 16px;
+	float:left;
 }
 
-li a {
-  display: block;
-  color: #ffffff;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+
+
+.mainPanel{
+	background-image: url("shopbg.jpg");
+	background-size: cover;
+	background-position: center;
+	width: 100%;
+	height: 500px;
 }
 
-.mainCont {
+
+.mainOverlay {
+    max-width: 60%; 
+    height: 525px;
+    background-color: rgba(200, 14, 35 ,0.6);
+}
+
+
+.mainOverlayText{
+	font-size: 135px;
+	font-family: Play;
+	color: #fafafa;
+	opacity: 0.9;
+	top: 30px;
+	left: 50px;
+	position: relative;
+	
+}
+
+
+.lowerPanel{
   margin: auto;
-  width: 80%;
-  border: 3px solid #b3e0ff;
-  padding: 10px;
+  max-width: 100%;
+  font-family:Roboto;
   text-align: center;
 }
 
-.welcomeIm {
-  width: 100%;
-}
 
-.foot {
-  min-height: 80px;
-  background-color: #b3e0ff;
-  width: 100%;
-  margin-top: 10px;
-  overflow: auto;
-}
-
-#itemsContainer {
-    width: 100%;
-    text-align: center;
-}
-
-
-#itemsContainer h1 {
-   display: block;
-    color: #4CAF50;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
+/*item holder section */
 
 .itemhols {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 10px;
     display: inline-block;
-    width: 25%;
+    width: 22%;
     padding:10px;
     min-height: 300px;
 }
@@ -80,7 +94,7 @@ li a {
 
 .itemhols h1 {
    display: block;
-    color: #4CAF50;
+    color: #080808;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -95,17 +109,112 @@ li a {
 }
 
 
-.button {
-    background-color: #4CAF50;
+
+
+
+#topMenuItems a{   
+    color: #fafafa;
+	text-decoration: none;
+}
+
+#topMenuItems a:link {
+    text-decoration: none;
+	color: #fafafa;
+}
+
+
+#topMenuItems a:visited {
+    text-decoration: none;
+	color: #fafafa;
+}
+
+
+#topMenuItems a:hover {
+	text-decoration: none;
+	color: #888;
+}	
+
+
+
+#lowerMenuItems a {
+	text-decoration: none;
+	color: #0d0d0d;
+	font-size: 15px;
+}
+
+#lowerMenuItems a:link {
+    text-decoration: none;
+
+}
+
+
+#lowerMenuItems a:visited {
+    text-decoration: none;
+	color: #0d0d0d;
+}
+
+
+#lowerMenuItems a:hover {
+	text-decoration: none;
+	color: #888;
+}
+
+
+
+.button{
+    background-color: white;
     border: none;
-    color: white;
-    padding: 15px 30px;
+    color: black;
+    border: 2px solid #0d0d0d;
+    padding: 16px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
     cursor: pointer;
 }
 
+.button:hover{
+    background-color: #C80E23;
+    color: white;
+    border: 2px solid #fafafa;
+}
 
+
+
+input[type=text] {
+    width: 170px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 13px;
+    font-color: #ccc;
+    background-color: white;
+    background-image: url("searchicon.png");
+    background-position: 1px 5px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    margin-top: 5px;
+
+}
+
+input[type=text]:focus {
+    width: 30%;
+}
+
+
+/* hide submit button */
+
+input[type=submit] {
+	position: absolute;
+	height: 0px;
+	width: 0px;
+	border: none;
+	padding: 0px;
+	visibility:none;
+}

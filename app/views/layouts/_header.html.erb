@@ -1,26 +1,32 @@
-<header class="headSec">
-      
-      <h1>RedSky Vinyl Store</h1>
-      
-      <ul>
-        
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Store", items_path %></li>
-        <li><%= link_to "About", about_path %></li>
-        <li><%= link_to "Contact", contact_path %></li>
-        
-        <% if user_signed_in? %>
+<header class="navBar">
+  
+        <div id = "topMenuItems"><%= link_to "Home", root_path %></div>
+        <div id = "topMenuItems"><%= link_to "Store", items_path %></div>
+        <div id = "topMenuItems"><%= link_to "About", about_path %></div>
+        <div id = "topMenuItems"><%= link_to "Contact", contact_path %></div>
+
+</header>
+
+<div class = "searchBar">
+  
+  
+  <% if user_signed_in? %>
         <!-- <li><a href = "#">Hi <%= current_user.email %></a></li> -->
         <!-- <li><a href = "#">Edit Profile</a></li> -->
-        <li><%= link_to "Edit Profile", editprofile_path %></li>
-        <li><%= link_to "Cart", cart_path %></li>
-        <li><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %></li>
-        <li><a>Hello <%= current_user.email %>!</a></li>
-        <% else %>
-        <li><%= link_to 'Register', new_user_registration_path %></li>
-        <li><%= link_to 'Sign In', new_user_session_path %></li>
-        <% end %>
+        <div id = "lowerMenuItems"><a>Welcome <%= current_user.email %></a></div>
+        <div id = "lowerMenuItems">  |  </div>
+        <div id = "lowerMenuItems"><%= link_to "Edit Profile", editprofile_path %></div>
+        <div id = "lowerMenuItems">  |  </div>
+        <div id = "lowerMenuItems"><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %></div>
+        <div id = "lowerMenuItems">  |  </div>
+        <div id = "lowerMenuItems"><%= link_to "Cart", cart_path %></div>
         
-      </ul>
-      
-    </header>
+        <% else %>
+        <div id = "lowerMenuItems"><%= link_to 'Register', new_user_registration_path %></div>
+        <div id = "lowerMenuItems">  |  </div>
+        <div id = "lowerMenuItems"><%= link_to 'Login', new_user_session_path %></div>
+        <% end %>
+  
+  <%= render 'layouts/search' %>
+
+</div>
