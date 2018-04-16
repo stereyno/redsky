@@ -1,18 +1,38 @@
-<div id="itemsContainer">
+<% provide(:title, 'Order Summary') %>
+
+<div class = "showEditPanel">
+
 <h2>Thank you</h2>
-<p>You just placed an order</p>
-</div>
+
 
 <table id="customers">
   <tr>
     <% @orders.limit(1).order(id: :desc).each do |order| %>
-    <td>Order reference: <%= order.id %></td>
+    <td>You just placed an order. Order reference: <%= order.id %></td>
     <% end %>
     
   </tr>
 </table>
 
 <table id="customers">
+  <tr>
+    
+    <td><strong>Order Summary</td>
+    
+  </tr>
+</table>
+
+<table id="customers">
+  
+  <tr>
+    <td><strong>Name</td>
+    <td><strong>Unit Price</td>
+    <td><strong>Quantity</td>
+    <td><strong>Total Price</td>
+    
+  </tr>
+  
+  
   <% @total = 0 %>
   
   <% @orderitems.each do |id, quantity| %>
@@ -20,40 +40,39 @@
     <% item = Orderitem.find_by_id(id) %>
     
     <td><%= item.title %></td>
-    <td><%= item.quantity %></td>
     <td><%= number_to_currency(item.price, :unit =>"€") %></td>
+    <td><%= item.quantity %></td>
     <td><%= number_to_currency(item.quantity * item.price, :unit =>"€") %></td>
   </tr>
-  
   <% timx = (item.price * item.quantity) %>
   
   <% @total += timx %>
   
     <% end %>
     
+    <hr>
+    
     <tr>
-      <td>Order Total: <%= @total %></td>
-      
+      <td><strong>Order Total : &euro;<%= @total %></td>
     </tr>
+    
     
     <% shipping = 5 %>
     <% @overall = shipping + @total %>
     
     <tr>
-     <td>Shipping &euro;10</td>
-      
-      
+     <td><strong>Shipping : &euro;5</td>
     </tr>
+    
+    
     <tr>
-    <td>You pay: &euro; <%= @overall %></td>
+    <td><strong>You pay : &euro;<%= @overall %></td>
     </tr>
     
     <tr>
       
       <td>
-        
         <a href = "/paid" class = "button">Submit Payment</a>
-        
       </td>
       
     </tr>
@@ -62,4 +81,4 @@
 </table>
 
 
-
+</div>

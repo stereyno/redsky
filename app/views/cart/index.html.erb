@@ -1,8 +1,10 @@
 <% provide(:title, 'Your Cart') %>
 
-<p id = "notice"><%= notice %></p>
+<div class = "showEditPanel">
+    
+    <h1>Cart for <%= current_user.email %></h1>
 
-<div id = "itemsContainer">
+    <div id = "itemsContainer">
     
     
     <% if @cart.empty? %>
@@ -12,6 +14,18 @@
     <table id = "customers">
         
         <% total = 0 %>
+        
+        <tr>
+            <td></td>
+            <td>Artist</td>
+            <td>Title</td>
+            <td>Price</td>
+            <td>Quantity</td>
+            <td>Total Price</td>
+            
+            
+            
+        </tr>
         
         <% @cart.each do |id, quantity| %>
         
@@ -31,33 +45,38 @@
             
             <td class = "artist"><%= link_to item.artist, item %></td>
             <td class = "title"><%= link_to item.title, item %></td>
-            <td><a href = "/cart/remove/<%= item.id %>">Remove From Cart</a></td>
             <td class = "price"><%= number_to_currency(item.price, :unit => "€") %></td>
             <td class = "quantity"><%= quantity %></td>
             <td class = "price"><%= number_to_currency(quantity * item.price, :unit => "€") %></td>
+            <td><a href = "/cart/remove/<%= item.id %>">Remove From Cart</a></td>
             
         </tr>
-
-            <tr>
-            <%= total += quantity * item.price %>
-             </tr>
+        
+        
+            <div id = "hideThis"><%= total += quantity * item.price %></div>
+            
         
         <% end %>
         
+        
         <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><strong><br><br>Total : <%= number_to_currency(total, :unit => "€") %></td>
             
-            Total : <%= number_to_currency(total, :unit => "€") %>
             
         </tr>
         
-        <td>
-            
-            
-            
-        </td>
+        <hr>
+    
         
         
     </table>
+    
+    <hr>
     
     <p>
         <a href="/items" class="button">Continue Shopping</a>
@@ -70,4 +89,6 @@
     
     
     
+</div>
+
 </div>

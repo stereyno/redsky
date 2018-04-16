@@ -16,6 +16,8 @@ class StaticPagesController < ApplicationController
   end
   
   def editprofile
+    
+    
   end
   
   def paid

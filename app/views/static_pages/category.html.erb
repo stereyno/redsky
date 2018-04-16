@@ -2,17 +2,36 @@
 
   
   <h1>You looked for these items</h1>
+  <hr>
+  <br>
   
   <% if @items.length ==0 %>
-  <h2>There are currently no items in this category</h2>
+  <h2>There are currently no items in the category : <%= item.genre %></h2>
   <% end %>
   
   <% @items.each do |item| %>
   <div class="itemhols">
-    <h1><%= item.title %></h1>
     <%= image_tag item.image, :class=>"itemholsIm" %>
-    <p>This item is in the category<%= item.genre %></p>
+    <p><%= item.artist %> - <%= item.title %></p>
+    <p><%= number_to_currency(item.price, :unit =>"€") %></p>
     
+            <% if user_signed_in? %>
+        
+            <!-- if the user is a registered user, display 'Add To Cart' -->
+        
+            <a href = "/cart/<%= item.id %>" class = "button">Add To Cart</a>
+        
+            <!-- if the logged in user is also an admin, display 'update items' options -->
+        
+              <% if current_user.admin? %>
+                <br><br>
+                <%= link_to 'Show', item, :class =>"adminButton", :role =>"button" %> | 
+                <%= link_to 'Edit', edit_item_path(item), :class =>"adminButton", :role =>"button" %> | 
+                <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"adminButton", :role =>"button" %>
+        
+              <% end %>
+        
+            <% end %>
     
   </div>
   
