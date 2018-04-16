@@ -6,7 +6,7 @@ class OrdersController < ApplicationController
   def index
     @user = User.find(current_user.id)
     @orders = @user.orders.all
-    #@orders = Order.all
+    @adminOrders = Order.all
   end
 
   # GET /orders/1

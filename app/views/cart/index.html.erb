@@ -9,8 +9,9 @@
     
     <% if @cart.empty? %>
     <p>Your cart is empty! Why not add something?</p>
-    <% end %>
+    <a href="/items" class="button">Continue Shopping</a>
     
+    <% else %>
     <table id = "customers">
         
         <% total = 0 %>
@@ -86,7 +87,7 @@
     
     
     
-    
+    <% end %>
     
     
 </div>

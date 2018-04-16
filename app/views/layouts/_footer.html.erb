@@ -1,4 +1,4 @@
-<footer class="footer">
+<div class="footer">
     
     <!-- Check user is logged in -->
     
@@ -10,13 +10,13 @@
     
         <% if current_user.admin? %>
         
-        Admin Options 
+        You're an admin!&emsp;&emsp;
 
-        <%= link_to 'New Item', new_item_path, :class =>"adminPanelButton", :role =>"button" %> | 
+        <%= link_to 'Add a new record to stock', new_item_path, :class =>"adminPanelButton", :role =>"button" %> | 
         
-        <%= link_to 'New Category', new_category_path, :class =>"adminPanelButton", :role =>"button" %> |
+        <%= link_to 'Add a new genre', new_category_path, :class =>"adminPanelButton", :role =>"button" %> |
         
-        <%= link_to "View All Orders", orders_path, :class => "adminButton", :role => "button" %>
+        <%= link_to "View All Orders", orders_path, :class => "adminPanelButton", :role => "button" %>
         
         <% end %>
         
@@ -25,4 +25,4 @@
     
     
 
-</footer>
+</div>

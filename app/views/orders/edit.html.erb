@@ -1,6 +1,12 @@
-<h1>Editing Order</h1>
+<% provide(:title, 'Edit Order') %>
+
+<div class = "showEditPanel">
+
+<h1>Edit Order</h1>
 
 <%= render 'form', order: @order %>
 
 <%= link_to 'Show', @order %> |
 <%= link_to 'Back', orders_path %>
+
+</div>

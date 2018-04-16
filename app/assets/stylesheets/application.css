@@ -190,7 +190,7 @@
 
 .button{
     background-color: white;
-    color: black;
+    color: #0d0d0d;
     border: 2px solid #0d0d0d;
     padding: 16px 32px;
     text-align: center;
@@ -204,7 +204,7 @@
 }
 
 .button:hover{
-    background-color: #888;
+    background-color: #0d0d0d;
     color: white;
     border: 2px solid #fafafa;
 }
@@ -238,6 +238,7 @@
     font-size: 16px;
     margin-left: 30px;
     margin-right: 30px;
+    margin-top: 28px;
     
 }
 
@@ -350,6 +351,7 @@ input[type=submit] {
 input[type=submit]:hover {
     
     background: #888;
+    font-color: #fafafa;
     
 }
 
@@ -359,14 +361,15 @@ input[type=submit]:hover {
 /* style for footer div */
 
 .footer {
-  font-family: Roboto;
+    font-family: Roboto;
 	color: #fafafa;
     display: inline-block;
     min-height: 80px;
     background-color: #0d0d0d;
     width: 100%;
-    margin-top: 10px;
     overflow: auto;
+    padding: 10px;
+ 
 }
 
 

@@ -11,27 +11,30 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :order_id %>
-    <%= form.text_field :order_id, id: :order_order_id %>
-  </div>
+  <table class = "field">
+  <tr>
+    <td><%= form.label :order_id %></td>
+    <td><%= form.text_field :order_id, id: :order_order_id %></td>
+  </tr>
 
-  <div class="field">
-    <%= form.label :order_date %>
-    <%= form.datetime_select :order_date, id: :order_order_date %>
-  </div>
+  <tr>
+    <td><%= form.label :order_date %></td>
+    <td><%= form.datetime_select :order_date, id: :order_order_date %></td>
+  </tr>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, id: :order_user_id %>
-  </div>
+  <tr>
+    <td><%= form.label :user_id %></td>
+    <td><%= form.text_field :user_id, id: :order_user_id %></td>
+  </tr>
 
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.text_field :status, id: :order_status %>
-  </div>
+  <tr>
+    <td><%= form.label :status %></td>
+    <td><%= form.text_field :status, id: :order_status %></td>
+  </tr>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <tr>
+    <td></td>
+    <td><%= form.submit %></td>
+  </tr>
+</table>
 <% end %>

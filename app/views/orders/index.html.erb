@@ -1,8 +1,43 @@
+<% provide(:title, 'Orders') %>
+
 <div class = "showEditPanel">
+
+<% if current_user.admin? %>
+<h1>All Orders</h1>
+<table id = "customers">
+  <thead>
+    <tr>
+      <th>Order</th>
+      <th>Order date</th>
+      <th>User</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% @adminOrders.each do |order| %>
+      <tr>
+        <td><%= order.order_id %></td>
+        <td><%= order.order_date %></td>
+        <td><%= order.user %></td>
+        <td><%= order.status %></td>
+        
+        <% if current_user.admin? %>
+        <td><%= link_to 'Show', order %></td>
+        <td><%= link_to 'Edit', edit_order_path(order) %></td>
+        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% else %>
 
 <h1>My Orders</h1>
 
-<table>
+<table id = "customers">
   <thead>
     <tr>
       <th>Order</th>
@@ -20,17 +55,16 @@
         <td><%= order.order_date %></td>
         <td><%= order.user %></td>
         <td><%= order.status %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
+
+  
 </table>
 
+<% end %>
+  
+
 <br>
-
-<%= link_to 'New Order', new_order_path %>
-
 
 </div>
