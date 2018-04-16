@@ -1,5 +1,11 @@
 <% provide(:title, 'Edit Your Details') %>
 
-<h1>Edit Profile</h1>
-<p>This is the page where the user profile will appear</p>
+<div class = "showEditPanel">
 
+<h1>Edit Profile</h1>
+<p>Hello <%= current_user.email %></p>
+
+<%= link_to "View My Orders", orders_path, :class => "adminButton", :role => "button" %>
+
+
+</div>

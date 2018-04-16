@@ -1,6 +1,10 @@
-<h1>Editing Item</h1>
+<div class = "showEditPanel">
+    <h1>Update Item</h1>
 
-<%= render 'form', item: @item %>
+    <%= render 'form', item: @item %>
+    <br><br>
+    <%= link_to 'Show', @item %> |
+    <%= link_to 'Back', items_path %>
+    <br><br>
 
-<%= link_to 'Show', @item %> |
-<%= link_to 'Back', items_path %>
+</div>

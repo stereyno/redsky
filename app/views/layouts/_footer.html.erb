@@ -1,4 +1,4 @@
-<footer class="foot">
+<footer class="footer">
     
     <!-- Check user is logged in -->
     
@@ -9,16 +9,19 @@
         <!-- Check if the current user is an admin user. Only display option to add new item if yes -->
     
         <% if current_user.admin? %>
-
-        <%= link_to 'New Item', new_item_path, :class =>"button", :role =>"button" %>
         
-        <%= link_to 'New Category', new_category_path, :class =>"button", :role =>"button" %>
+        Admin Options 
+
+        <%= link_to 'New Item', new_item_path, :class =>"adminPanelButton", :role =>"button" %> | 
+        
+        <%= link_to 'New Category', new_category_path, :class =>"adminPanelButton", :role =>"button" %> | 
         
         <% end %>
+        
+        
             
     <% end %>
     
     
-    <%= link_to "View Orders", orders_path, :class => "button", :role => "button" %>
 
 </footer>
