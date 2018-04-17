@@ -1,13 +1,16 @@
-<% provide(:title, 'Edit Your Details') %>
+<% provide(:title, 'Your Profile') %>
 
 <div class = "showEditPanel">
 
 <h1>Edit Profile</h1>
+<br><br>
 <p>Hello <%= current_user.email %></p>
-
-<%= link_to "View My Orders", orders_path, :class => "adminButton", :role => "button" %>
+<br><br>
+<%= link_to "View My Orders", orders_path, :class => "button", :role => "button" %>
 
 <br><br>
+
+<%= render 'layouts/recentSale' %>
 
 
 </div>

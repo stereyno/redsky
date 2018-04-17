@@ -10,13 +10,16 @@ class ItemsController < ApplicationController
 
   def search
     st = "%#{params[:q]}%"
-    @items = Item.where("artist like ?", st)
+    @items = Item.where("artist like ? OR title like ? OR genre like ? OR label like ?", st, st, st, st)
   end
   
+  
+
 
   # GET /items/1
   # GET /items/1.json
   def show
+ 
   end
 
   # GET /items/new

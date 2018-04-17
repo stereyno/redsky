@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   
   get '/paid', to: 'static_pages#paid'
   
+  
+
+  
   post '/search', to: 'items#search'
  
   

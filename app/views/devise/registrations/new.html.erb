@@ -8,6 +8,24 @@
   <%= devise_error_messages! %>
 
   <table id = "customers">
+    
+  <tr>
+    <td><%= f.label :name %></td><br />
+    <td><%= f.text_field :name, autofocus: true %></td>
+  </tr>
+ 
+  
+  <tr>
+    <td><%= f.label :address %></td><br />
+    <td><%= f.text_field :address, autofocus: true %></td>
+  </tr>
+  
+  <tr>
+    <td><%= f.label :phone %></td><br />
+    <td><%= f.text_field :phone, autofocus: true %></td>
+  </tr>
+  
+    
   <tr>
     <td><%= f.label :email %></td><br />
     <td><%= f.email_field :email, autofocus: true %></td>

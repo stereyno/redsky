@@ -5,8 +5,8 @@ class OrdersController < ApplicationController
   # GET /orders.json
   def index
     @user = User.find(current_user.id)
-    @orders = @user.orders.all
-    @adminOrders = Order.all
+    @orders = @user.orders.all #store individual user orders
+    @adminOrders = Order.all #store all orders for admin users
   end
 
   # GET /orders/1

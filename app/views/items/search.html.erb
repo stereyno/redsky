@@ -1,6 +1,10 @@
-<% provide(:title, 'Store') %>
-<div id="itemsContainer">
-<h1>Items</h1>
+<% provide(:title, 'Searched Items') %>
+
+
+
+<div class ="lowerPanel">
+<h1>We Found These Records...</h1>
+<br><br>
 
 
 
@@ -10,15 +14,18 @@
       <%= link_to (image_tag item.image, :class=>"itemholsIm"), item %>
       
       
-      <h1><%= item.artist %> - <%= item.title %></h1>
+      <h1><%= item.artist %></h1>
+      <h1><%= item.title %></h1>
       
+      <br>
         
       
-        <%= item.reference_ID %>
-        <%= item.genre %>
-        <%= item.release_date %>
-        <%= item.label %>
-        <%= item.price %>
+        <%= item.genre %><br> 
+        Label : <%= item.label %> <br>
+        Released : <%= item.release_date %><br> 
+        <%= number_to_currency(item.price, :unit =>"€") %>
+        
+        <br><br>
         
         <% if user_signed_in? %>
         
@@ -29,10 +36,10 @@
           <!-- if the logged in user is also an admin, display 'update items' options -->
         
           <% if current_user.admin? %>
-        
-          <%= link_to 'Show', item, :class =>"button", :role =>"button" %>
-          <%= link_to 'Edit', edit_item_path(item), :class =>"button", :role =>"button" %>
-          <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"button", :role =>"button" %>
+          <br><br>
+          <%= link_to 'Show', item, :class =>"adminButton", :role =>"button" %> | 
+          <%= link_to 'Edit', edit_item_path(item), :class =>"adminButton", :role =>"button" %> | 
+          <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"adminButton", :role =>"button" %>
         
           <% end %>
         
@@ -46,3 +53,5 @@
 <br>
 
 </div>
+
+

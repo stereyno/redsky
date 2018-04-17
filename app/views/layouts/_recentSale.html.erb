@@ -1,0 +1,22 @@
+<br>
+<h1>Recent Purchases</h1>
+<br>
+
+ 
+<% @latestOrder.limit(3).each do |order| %>
+
+<div class="itemhols">
+
+
+  <p><%= order.order_date %></p>
+  
+</div>
+
+<% end %>
+
+  
+
+
+
+
+

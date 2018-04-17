@@ -1,16 +1,26 @@
+<% provide(:title, 'Forgot Password') %>
+
+<div class = "showEditPanel">
+
 <h2>Forgot your password?</h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+  <table class = "customers">
+    <tr>
+    <td><%= f.label :email %></td><br />
+    <td><%= f.email_field :email, autofocus: true %></td>
+  </tr>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
+  <tr>
+    <td></td>
+    <td><%= f.submit "Send me reset password instructions" %></td>
+  </tr>
+  
+  </table>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+</div>
