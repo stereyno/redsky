@@ -1,0 +1,20 @@
+<h1>Top Sellers</h1>
+
+<!-- partial to display the Top Selling items -->
+
+<!-- loop through the @topSellers array and print out the image, artist and title of each -->
+
+<% @topSellers.each do |orderitem, item| %>
+
+<div class="itemhols">
+
+
+  <%= link_to (image_tag orderitem.image, :class=>"itemholsIm"), item %></p>
+  <h1><%= orderitem.artist %></h1>
+  <h1><%= orderitem.title %></h1>
+  
+ 
+  
+</div>
+
+<% end %>

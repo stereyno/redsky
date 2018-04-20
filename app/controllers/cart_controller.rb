@@ -86,8 +86,9 @@ class CartController < ApplicationController
     @cart.each do | id, quantity |
       item = Item.find_by_id(id)
       
-      @orderitem = @order.orderitems.build(:item_id => item.id, :title => item.title, :quantity => quantity, :price => item.price)
-    
+      
+      #@orderitem = @order.orderitems.build(:item_id => item.id, :title => item.title, :quantity => quantity, :price => item.price)
+      @orderitem = @order.orderitems.build(:item_id => item.id, :artist => item.artist, :title => item.title, :image => item.image, :quantity => quantity, :price => item.price)
     @orderitem.save  
     
   end
