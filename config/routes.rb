@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   get '/store', to:'items#index'
   get '/about', to:'static_pages#about'
   get '/contact', to:'static_pages#contact'
-  get '/editprofile', to: 'static_pages#editprofile'
+  
   
   #get '/login', to: 'user#login'
   #get '/logout', to: 'user#logout'
@@ -48,6 +48,8 @@ Rails.application.routes.draw do
   get '/cart/remove/:id', to: 'cart#remove'
   
   get 'category/:title', to: 'static_pages#category'
-
+  
+  resources:users
+  get '/editprofile', to: 'static_pages#editprofile'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
