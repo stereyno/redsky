@@ -364,15 +364,13 @@ input[type=submit]:hover {
     font-family: Roboto;
 	color: #fafafa;
     display: inline-block;
+    overflow: auto;
     min-height: 80px;
     background-color: #0d0d0d;
     width: 100%;
-    overflow: auto;
     padding: 10px;
  
 }
-
-
 
 .field {
 	text-align: right;
@@ -393,3 +391,71 @@ input[type=submit]:hover {
     border-spacing: 20px;
     
 }
+
+h1, h2, h4, h5 {
+    font-family: Roboto;
+    text-align: center;
+}
+
+.Form {
+	font-family: Roboto;
+	text-align: center;
+}
+
+#aboutText {
+    font-family: Roboto;
+    text-align: justify;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 30px;
+}
+
+/* book/ form page specific styles for desktop*/
+
+#contactTable {
+
+	width: 50%;
+	margin: auto;
+}
+
+#inputMessage {
+	height: 100px;
+}
+
+input[type=text] {
+	border: 2px solid #383838;
+	border-radius: 4px;
+	width: 70%;
+}
+
+select {
+	border: 2px solid #383838;
+	width: 80%;
+}
+
+textarea {
+	width: 50%;
+	height: 100px;
+}
+
+input[type=submit] {
+	font-family: Roboto;
+	width: 30%;
+	display: flex;
+	justify-content: center;
+	padding: 5px;
+	background: #ffffff;
+	border: 2px solid #0d0d0d;
+	cursor: pointer;
+	-webkit-border-radius: 5px;
+	border-radius: 4px;
+	margin-left: 135px;
+}
+
+input[type=submit]:hover {
+
+	background: #888;
+	font-color: #fafafa;
+}
+
+

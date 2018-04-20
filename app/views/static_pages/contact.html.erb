@@ -1,4 +1,48 @@
 <% provide(:title, 'Contact') %>
 
-<h1>Contact</h1>
-<p>Contact RedSky Vinyl Store</p>
+<h1>Contact Us</h1>
+<br>
+<h2>We are here to answer any questions you may have or help you with returns.</h2>
+<h2>Reach out to us by filling in the below form we will respond as soon as we can! Thank you, RedSky Vinyl</h2>
+<br>
+
+	<script src="form.js"></script><!--Link to the JS file to change the form field background color-->
+	<script>
+	$(document).ready(function(){
+    $("input").focus(function(){
+        $(this).css("background-color", "#cccccc");
+    });
+	});
+	</script>
+	<form> <!--Contact form-->
+	<br>
+	<div class = "Form">
+	<br>
+	<table id = "contactTable">
+	<tr>
+	<td>Your Name</td>
+	<td><input name = "name" type = "text" size = "60" /></td>
+	</tr>
+	<td>Your Email</td>
+	<td><input email = "email" type = "text" size = "60" /></td>
+	</tr>
+	<td>Subject</td>
+	<td><input subject = "subject" type = "text" size = "60" /></td>
+	</tr>
+	<td>Your Message</td>
+	<td><input message = "message" type = "text" size = "60" style="height:250px" /></td>
+	</tr>
+	<td></td>
+	<td><input class="commit" name="commit" type="submit" value="Submit"/></td> 
+	</table>
+	</form>
+	<br>
+	<br>
+
+		</div>
+
+
+
+	</body>
+
+</html>
