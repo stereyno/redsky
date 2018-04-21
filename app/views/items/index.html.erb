@@ -3,7 +3,9 @@
 
 
 <div class ="lowerPanel">
-<h1>All Vinyl Currently In Stock</h1>
+
+<h1 style="color:black">All Vinyl Currently In Stock</h1>
+
 <br><br>
 
 
@@ -11,7 +13,7 @@
     <% @items.each do |item| %>
     <div class="itemhols">
       
-      <%= link_to (image_tag item.image, :class=>"itemholsIm"), item %>
+      <%= link_to (image_tag item.image, :class=>"itemholsIm") %>
       
       <h1><%= item.artist %></h1>
       <h1><%= item.title %></h1>
