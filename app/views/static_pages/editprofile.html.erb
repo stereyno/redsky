@@ -2,15 +2,34 @@
 
 <div class = "showEditPanel">
 
-<h1>Edit Profile</h1>
+
+<% if current_user.admin? %>
+<h1>Admin Profile</h1>
+<br><br>
+<p>Hello <%= current_user.email %> (admin)</p>
+<br><br><hr><br><br>
+
+
+<%= link_to "View All Orders", orders_path, :class => "button", :role => "button" %>
+
+<% else %>
+
+<h1>Your Profile</h1>
 <br><br>
 <p>Hello <%= current_user.email %></p>
-<br><br>
+<br><br><hr><br><br>
+
 <%= link_to "View My Orders", orders_path, :class => "button", :role => "button" %>
 
+<%= render 'layouts/recentSale' %>
+
+<% end %>
+
 <br><br>
 
-<%= render 'layouts/recentSale' %>
+
+
+
 
 
 

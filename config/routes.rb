@@ -34,11 +34,6 @@ Rails.application.routes.draw do
   get '/contact', to:'static_pages#contact'
   
   
-  #get '/login', to: 'user#login'
-  #get '/logout', to: 'user#logout'
-  #get '/login', to: 'users/sessions#new'
-  
-  #get 'users/:id' => 'users#show'
  
   get 'cart/index'
   get '/cart', to: 'cart#index'

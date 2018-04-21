@@ -7,6 +7,7 @@ class ItemsController < ApplicationController
     @items = Item.all
   end
 
+  #added search for artist, title, genre, label - pass in 4 variables
 
   def search
     st = "%#{params[:q]}%"

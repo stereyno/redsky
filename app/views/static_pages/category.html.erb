@@ -1,3 +1,5 @@
+<% provide(:title, 'Categories') %>
+
 <div class="lowerPanel">
 
   
@@ -5,8 +7,8 @@
   <hr>
   <br>
   
-  <% if @items.length ==0 %>
-  <h2>There are currently no items in the category : <%= item.genre %></h2>
+  <% if @items.length == 0 %>
+  <h2>There are currently no items in the category</h2>
   <% end %>
   
   <% @items.each do |item| %>

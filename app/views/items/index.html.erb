@@ -11,7 +11,7 @@
     <% @items.each do |item| %>
     <div class="itemhols">
       
-      <%= link_to (image_tag item.image, :class=>"itemholsIm"), item %>
+      <%= link_to (image_tag item.image, :class=>"itemholsIm") %>
       
       <h1><%= item.artist %></h1>
       <h1><%= item.title %></h1>

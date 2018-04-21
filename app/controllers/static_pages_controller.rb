@@ -29,10 +29,14 @@ class StaticPagesController < ApplicationController
     #@latestOrder = Order.order('order_date desc')
     
     @user = User.find(current_user.id)
-
-    @recentPurchases = @user.orders.all  
     
-    @latestPurchases= @recentPurchases.order("order_date").last(3)
+    @recentPurchases = Orderitem.order("created_at").last(3)
+    
+    
+
+    #@recentPurchases = @user.orderitems.all  
+    
+    #@latestPurchases= @recentPurchases.order("created_at").last(3)
     
     
     
@@ -55,7 +59,7 @@ class StaticPagesController < ApplicationController
     #Use raw SQL to find the titles with most duplicates in the orderitems table, and limit the search to the top 3.
     #Assign the top 3 records returned to the variable topSellers
     
-    @topSellers = Orderitem.find_by_sql("select title, artist, image, count(*) as count from orderitems group by title order by count desc limit 3")
+    @topSellers = Orderitem.find_by_sql("select title, artist, image, count(*) as count from orderitems group by title order by count desc limit 4")
     
    
     

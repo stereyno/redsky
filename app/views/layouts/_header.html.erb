@@ -9,11 +9,15 @@
 
 <div class = "searchBar">
   
+
+  
   
   <% if user_signed_in? %>
-        <!-- <li><a href = "#">Hi <%= current_user.email %></a></li> -->
-        <!-- <li><a href = "#">Edit Profile</a></li> -->
+        <% if current_user.admin? %>
+        <div id = "lowerMenuItems"><a>Welcome <%= current_user.email %> (Admin)</a></div>
+        <% else %>
         <div id = "lowerMenuItems"><a>Welcome <%= current_user.email %></a></div>
+        <% end %>
         <div id = "lowerMenuItems">  |  </div>
         <div id = "lowerMenuItems"><%= link_to "My Account", editprofile_path %></div>
         <div id = "lowerMenuItems">  |  </div>

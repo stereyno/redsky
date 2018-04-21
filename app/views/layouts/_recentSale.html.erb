@@ -3,13 +3,13 @@
 <br>
 
  
-<% @latestPurchases.each do |order| %>
+<% @recentPurchases.each do |orderitem| %>
 
 <div class="itemhols">
 
-
-  <p><%= order.order_date %></p>
-
+    <h1><%= orderitem.artist %></h1>
+    <h1><%= orderitem.title %></h1>
+  
   
 </div>
 
